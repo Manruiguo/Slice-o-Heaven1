@@ -13,6 +13,9 @@ public class Sliceoheaven {
         PizzaStore order = new PizzaStore();
         order.processCardPayment("12345678901234", "12/25", 123);
 
+        PizzaStore sliceOHaven = new PizzaStore();
+        sliceOHaven.specialOfTheDay("Pepperoni Pizza", "Garlic Bread", "$12.99");
+
 
     }
 }

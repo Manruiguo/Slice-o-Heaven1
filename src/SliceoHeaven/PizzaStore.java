@@ -19,24 +19,27 @@ public class PizzaStore {
     private final String DEF_PIZZA_INGREDIENTS = "Mozzarella Cheese";
     private final double DEF_ORDER_TOTAL = 15.00;
 
-    public void setOrderID(String orderID){
+    public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
-    public String getOrderID(){                                                                                                                                                                                                
+
+    public String getOrderID() {
         return orderID;
     }
 
-    public void setOrderTotal(int orderTotal){
-        this.orderTotal= orderTotal;
+    public void setOrderTotal(int orderTotal) {
+        this.orderTotal = orderTotal;
     }
-    public double getOrderTotal(){
+
+    public double getOrderTotal() {
         return orderTotal;
     }
 
-    public void setPizzaIngredients(String pizzaIngredients){
+    public void setPizzaIngredients(String pizzaIngredients) {
         this.pizzaIngredients = pizzaIngredients;
     }
-    public String getPizzaIngredients(){
+
+    public String getPizzaIngredients() {
         return pizzaIngredients;
     }
 
@@ -47,7 +50,6 @@ public class PizzaStore {
         this.sides = "无";
         this.drinks = "无";
     }
-
 
 
     public void takeOrder(String orderID, String pizzaIngredients, double orderTotal) {
@@ -61,7 +63,7 @@ public class PizzaStore {
 
     }
 
-    public void makePizza(){
+    public void makePizza() {
         System.out.println("Order accepted!");
 
         System.out.println("Order is being prepared");
@@ -85,8 +87,7 @@ public class PizzaStore {
     }
 
 
-
-    public void processCardPayment(String cardNumber,String expiryDate,int cvv){
+    public void processCardPayment(String cardNumber, String expiryDate, int cvv) {
         int cardLength = cardNumber.length();
 
         if (cardLength == 14) {
@@ -100,11 +101,11 @@ public class PizzaStore {
 
         String blacklistedNumber = "********";
 
-        if (cardNumber.equals(blacklistedNumber)){
+        if (cardNumber.equals(blacklistedNumber)) {
             System.out.println("Card is blacklisted. Please use another card.");
         }
 
-        int lastFourDigits = Integer.parseInt(cardNumber.substring(cardLength-4));
+        int lastFourDigits = Integer.parseInt(cardNumber.substring(cardLength - 4));
 
         StringBuilder sb = new StringBuilder();
         sb.append(cardNumber.charAt(0));
@@ -115,6 +116,16 @@ public class PizzaStore {
 
         String cardNumberToDisplay = sb.toString();
         System.out.println("Card number to display: " + cardNumberToDisplay);
-    }
 
+
+
+    }
+    public void specialOfTheDay(String pizzaOfTheDay, String sideOfTheDay, String specialPrice){
+        StringBuilder displayInfo = new StringBuilder();
+        displayInfo.append("Pizza of the day: ").append(pizzaOfTheDay);
+        displayInfo.append("\nSide of the day: ").append(sideOfTheDay);
+        displayInfo.append("\nSpecial price: ").append(specialPrice);
+
+        System.out.println(displayInfo.toString());
+    }
 }
