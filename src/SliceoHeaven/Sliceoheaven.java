@@ -10,5 +10,9 @@ public class Sliceoheaven {
         pizzaStore1.displayReceipt();
 
 
+        PizzaStore order = new PizzaStore();
+        order.processCardPayment("12345678901234", "12/25", 123);
+
+
     }
 }

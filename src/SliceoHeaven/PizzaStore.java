@@ -22,7 +22,7 @@ public class PizzaStore {
     public void setOrderID(String orderID){
         this.orderID = orderID;
     }
-    public String getOrderID(){
+    public String getOrderID(){                                                                                                                                                                                                
         return orderID;
     }
 
@@ -30,7 +30,7 @@ public class PizzaStore {
         this.orderTotal= orderTotal;
     }
     public double getOrderTotal(){
-        return getOrderTotal();
+        return orderTotal;
     }
 
     public void setPizzaIngredients(String pizzaIngredients){
@@ -47,7 +47,6 @@ public class PizzaStore {
         this.sides = "无";
         this.drinks = "无";
     }
-
 
 
 
@@ -69,10 +68,7 @@ public class PizzaStore {
 
         System.out.println("Your order is ready!");
 
-
     }
-
-
 
     private void printReceipt() {
         System.out.println("********RECEIPT********");
@@ -87,4 +83,38 @@ public class PizzaStore {
     public void displayReceipt() {
         printReceipt();
     }
+
+
+
+    public void processCardPayment(String cardNumber,String expiryDate,int cvv){
+        int cardLength = cardNumber.length();
+
+        if (cardLength == 14) {
+            System.out.println("Card accepted");
+        } else {
+            System.out.println("Invalid card");
+        }
+
+        int firstCardDigit = Integer.parseInt(cardNumber.substring(0, 1));
+        System.out.println("First digit of the card: " + firstCardDigit);
+
+        String blacklistedNumber = "********";
+
+        if (cardNumber.equals(blacklistedNumber)){
+            System.out.println("Card is blacklisted. Please use another card.");
+        }
+
+        int lastFourDigits = Integer.parseInt(cardNumber.substring(cardLength-4));
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(cardNumber.charAt(0));
+        for (int i = 1; i < cardLength - 4; i++) {
+            sb.append('*');
+        }
+        sb.append(cardNumber.substring(cardLength - 4));
+
+        String cardNumberToDisplay = sb.toString();
+        System.out.println("Card number to display: " + cardNumberToDisplay);
+    }
+
 }
