@@ -3,7 +3,7 @@ package SliceoHeaven;
 public class Sliceoheaven {
     public static void main(String[] args) {
         PizzaStore pizzaStore = new PizzaStore();
-        pizzaStore.takeOrder();
+        pizzaStore.takeOrder1();
         pizzaStore.displayReceipt();
 
         PizzaStore pizzaStore1 = new PizzaStore();
@@ -15,6 +15,8 @@ public class Sliceoheaven {
 
         PizzaStore sliceOHaven = new PizzaStore();
         sliceOHaven.specialOfTheDay("Pepperoni Pizza", "Garlic Bread", "$12.99");
+
+
 
 
     }
